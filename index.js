@@ -380,4 +380,4 @@ client.on('message', message => {
     }
   })
 
-client.login('ODc3NTMxMjkyNzY0MzYwNzA3.YRz-sw.y0TvChMzKT1UGtD1ROnauL5nxSg');
+client.login(process.env.DJS.TOKEN);
