@@ -10,6 +10,8 @@ const ms = require('ms');
 
 const map = new Map()
 
+const moment = require('moment')
+
 const snipes = new Discord.Collection()
 
 client.commands = new Discord.Collection();
@@ -367,17 +369,54 @@ client.on('clickButton', async (button) => {
 client.on('message', message => {
     let args = message.content.substring(prefix.length).split(" ")
     if (message.content.startsWith(`${prefix}serverinfo`)) {
+    const verificationLevels = {
+      NONE: 'Không có',
+      LOW: 'Thấp',
+      MEDIUM: 'Trung Bình',
+      HIGH: 'Cao',
+      VERY_HIGH: 'Cao Nhất',
+    };
+    const regions = {
+      brazil: 'Brazil',
+      europe: 'Châu Âu',
+      hongkong: 'HongKong',
+      india: 'Ấn Độ',
+      japan: 'Nhật Bản',
+      russia: 'Nga',
+      singapore: 'Singapore',
+      southafrica: 'Nam Phi',
+      sydeny: 'Úc',
+      'us-central': 'US-Central',
+      'us-west': 'US-West',
+      'us-east': 'US-East',
+      'us-south': 'US-South'
+
+    };
+    
     const serverinfo3 = new Discord.MessageEmbed()
       .setTitle(`Thông tin máy chủ ${message.guild.name}`)
       .setDescription(`❯ Bao gồm các thông tin về máy chủ ${message.guild.name}`)
       .setAuthor(`Podkas Bots`, message.author.displayAvatarURL())
       .setThumbnail(`${message.guild.iconURL()}`)
       .addFields({
-        name: '**● GENERAL INFO**', value: `**Tên máy chủ**: ${message.guild.name}\n**Trùm máy chủ**: ${message.guild.owner.user.tag}\n**Tổng số thành viên**: ${message.guild.memberCount}\n**Mức độ bảo mật máy chủ**: ${message.guild.mfaLevel}\n**Tổng số nâng cấp (boost)**: ${message.guild.premiumSubscriptionCount}`,
+        name: '**● GENERAL INFO**', value: `**Tên máy chủ**: ${message.guild.name}\n**Trùm máy chủ**: ${message.guild.owner.user.tag}\n**Tổng số thành viên**: ${message.guild.memberCount}\n**Tổng số nâng cấp (boost)**: ${message.guild.premiumSubscriptionCount}\n**Vùng máy chủ**: ${regions[message.guild.region]}\n**Ngày tạo kênh**: ${moment(message.guild.createdTimestamp).format('LT')} ${moment(message.guild.createdTimestamp).format('LL')}  (${moment(message.guild.createdTimestamp).fromNow()})`,
       })
+      .setFooter(`Thông tin máy chủ ${message.guild.name}`)
+      .setTimestamp()
     
-    message.channel.send(serverinfo3)
+     message.channel.send(serverinfo3)
     }
   })
 
+client.on('message', message => {
+    let args = message.content.substring(prefix.length).split(" ")
+    if (message.content.startsWith(`${prefix}server-avatar`)) {
+      const serveravatar = new Discord.MessageEmbed()
+        .setTitle(`Ảnh của ${message.guild.name}`)
+        .setImage(`${message.guild.iconURL({ dynamic: true, size: 256 })}`)
+        .setTimestamp()
+
+        message.channel.send(serveravatar)
+      }
+    })
 client.login('ODc3NTMxMjkyNzY0MzYwNzA3.YRz-sw.y0TvChMzKT1UGtD1ROnauL5nxSg');
