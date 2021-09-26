@@ -8,7 +8,10 @@ module.exports = {
         
         const Embed14 = new MessageEmbed()
         .setColor('#fff100')
-        .setDescription('Vui lòng nhập người chơi cần banned, hoặc bạn không thể banned người này')
+        .setTitle('Banned')
+        .setDescription('Nhập người chơi cần banned')
+        .setFooter('-ban <tag> <reason>')
+        .setTimestamp()
 
         const Embed15 = new MessageEmbed()
         .setColor('#fff100')
