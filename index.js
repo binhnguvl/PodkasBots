@@ -419,4 +419,13 @@ client.on('message', message => {
         message.channel.send(serveravatar)
       }
     })
+
+client.on('message', message => {
+    if (message.content.startsWith(prefix + 'say')) {
+        message.delete()
+        if (message.author.bot) return;
+        const SayMessage = message.content.slice(4).trim();
+        message.channel.send(`**${message.author.tag}**: ${SayMessage}`)
+    }
+});
 client.login('ODc3NTMxMjkyNzY0MzYwNzA3.YRz-sw.y0TvChMzKT1UGtD1ROnauL5nxSg');
