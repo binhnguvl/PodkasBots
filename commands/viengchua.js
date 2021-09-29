@@ -8,10 +8,9 @@ module.exports = {
         const viengchua = new MessageEmbed()
         .setColor('#f43213')
         .addFields(
-		    { name: 'Viếng Pé ROD', value: 'Pay khỏi clan vào lúc 9 giờ 12 phút ngày 24/09/2021 vì bị ngu'},
+		    { name: 'Viếng Chùa Online', value: 'Viếng chùa tịnh tâm'},
 	     )
         .setImage('')
-        .setFooter('Tưởng niệm ROD pay khỏi clan')
         .setTimestamp()
         
       client.on('clickButton', async (button) => {
