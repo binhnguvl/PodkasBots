@@ -349,14 +349,13 @@ client.on('message', message => {
     const viengchua1 = new Discord.MessageEmbed()
     .setColor('#f43213')
     .addFields(
-		    { name: 'Viếng Pé ROD', value: 'Pay khỏi clan vào lúc 9 giờ 12 phút ngày 24/09/2021 vì bị ngu'},
+		    { name: 'Viếng Chùa Online', value: 'Viếng chùa, tịnh tâm'},
 	  )
     .setImage('')
-    .setFooter('Tưởng niệm ROD pay khỏi clan')
     .setTimestamp()
       
     const cungRODs = new MessageButton()
-    .setStyle("green")
+    .setStyle("red")
     .setLabel("🙏")
     .setID("cungRODs")
           
@@ -370,7 +369,7 @@ client.on('message', message => {
 client.on('clickButton', async (button) => {
   if (button.id === 'cungRODs') {
     button.reply.defer()
-    button.channel.send(`**${button.clicker.user.tag}** vừa viếng pé ROD 1 nén nhang 🙏`);
+    button.channel.send(`**${button.clicker.user.tag}** vừa viếng chùa 1 nén nhang 🙏`);
   }
 });
 
