@@ -6,12 +6,14 @@ module.exports = {
     execute(message, args){  
         if (message.member.hasPermission('KICK_MEMBERS')) { 
         const Embed9 = new MessageEmbed()
-        .setColor('#fff100')
-        .setDescription('Vui lòng nhập người chơi cần kick, hoặc bạn không thể kick người này')
+        .setColor('#0fff17')
+        .setDescription('Vui lòng nhập người chơi cần kick')
+        .setFooter('VD: -kick <tag> [reason]')
+        .setTimestamp()
 
         const Embed10 = new MessageEmbed()
-        .setColor('#fff100')
-        .setDescription('Người chơi này đã bị đuổi khỏi servers')
+        .setColor('#0fff17')
+        .setDescription(`<:CheckMark:892600574418227230> ***${message.member.user.tag} đã bị kick***`)
            
         const member = message.mentions.users.first();
         if(member){
@@ -23,7 +25,7 @@ module.exports = {
         }
     } else {
         const Embed11 = new MessageEmbed()
-        .setColor('#fff100')
+        .setColor('#0fff17')
         .setDescription('Bạn không có quyền thực hiện lệnh này')
         message.channel.send(Embed11)
     }
