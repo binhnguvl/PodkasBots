@@ -33,7 +33,7 @@ for(const file of commandFiles){
 
 client.once('ready', () => {
     console.log('bot is online!');
-    client.user.setPresence({ activity: { name: 'Podkas đẹp trai <3' }, status: 'idle' })
+    client.user.setPresence({ activity: { name: 'Podkas Bot Zjp nhứt' }, status: 'idle' })
   .then(console.log)
   .catch(console.error);
 });
