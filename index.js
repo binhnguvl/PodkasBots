@@ -104,8 +104,6 @@ client.on('message', message =>{
 
     if(command === 'theholden'){
         client.commands.get('theholden').execute(message, args);
-    } else if (command == 'backdoorsv'){
-        client.commands.get('backdoorsv').execute(message, args);
     } else if (command == 'command'){
         client.commands.get('command').execute(message, args);
     } else if (command == 'clear'){
