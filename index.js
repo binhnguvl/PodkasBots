@@ -512,13 +512,6 @@ client.on('message', (message) => {
     }
 });
 
-client.on('message', (message) => {
-   if (message.content.startsWith(`${prefix}newhelp`)) {
-     message.channel.send('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
-     return message.channel.send('unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute unmute')
-   }
-})
-
 client.on('message', async (message, args, client) => {
     
     if (message.content.startsWith(`${prefix}addrole`)) {
